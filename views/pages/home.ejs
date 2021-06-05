@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1Q2BRQ9PD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H1Q2BRQ9PD');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerai Dashboard</title>
+    <!-- Start Google Font Definitions -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Montserrat:wght@100;200;300;400;500&family=Raleway&family=PT+Sans&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- End Google Font Definitions -->
+    <link href= "../style/reset.css" rel= "stylesheet">
+    <link href= "../style/base.css" rel= "stylesheet">
+    <link id = "theme" href= "../style/lightlayout.css" rel= "stylesheet">
+    <% if (theme === 'dark'){%>
+      <link id = "dark-mode" href= "../style/darklayout.css" rel= "stylesheet">
+    <%}%>
+    <link href= "../style/modules.css" rel= "stylesheet">
+    <script src="https://use.fontawesome.com/0c8d08633b.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="main-heading">
+        <h1>
+          <a href = "/">Numerai Insights </a>
+        </h1>
+        <nav>
+          <a id = "use" href = "/use">Use</a>
+          <a href = "/about_us">About</a>
+        </nav>
+      </div>
+      <div class="sub-heading">
+        <h3>Dark Mode</h3>
+        <label class="switch">
+          <input class = "toggle" type="checkbox" <%if(theme === 'dark'){%>checked<%}%>>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <% if(topTen !== false){ for (let i =0; i < topTen.length; i++){%>
+        <input type = "hidden" value = "<%=topTen[i]%>" name = "topTen" class = "topTen">
+        <%}%>
+      <%}%>
+      <input type = "hidden" value = "<%=modelName%>" name = "modelName" id = "modelFound">
+      <input type = "hidden" value = "<%=modelExistsUser%>" name = "modelExistsUser" id = "modelExistsUser">
+
+      <section>
+        <div class="section-heading">
+          <h2>Saved Collections</h2>
+          <div class="section-controls">
+            <input type="text" id="collection-name" />
+            <button id="add-collection-button" class="section-button"><i class="fa fa-plus"></i>New Collection</button>
+          </div>
+        </div>
+        <ul class = "existing-collections collectionList">
+        </ul>
+      </section>
+      <section>
+        <div class="section-heading">
+          <h2>Models</h2>
+          <div class="section-controls">
+            <button class="section-button" id="clear-model-list-button">Clear All</button>
+            <button class="section-button" id="save-collection-button">Save Collection</button>
+          </div>
+        </div>
+        <ul id = "modelList" class = "collectionList">
+        </ul>
+        <div class="section-footer">
+          <input id = "model-to-add" class = "username-input" class = "model" type ="text" name ="model" ></input>
+          <label id = "save-new-model" class="section-button"><i id = "model-plus" class="fa fa-plus"></i><div class="loader"></div>Add Model</label>
+        </div>
+      </section>
+      <section id = "user-detail">
+        <h2>Performance</h2>
+        <div class="loader-detail"></div>
+        <div id = "detail-header"></div>
+        <div id = "hide-on-load">
+          <h2 id ="user">Collection:</h2>
+          <p id = "modal-info">Click on each model to view metrics of live round performance<span id ="mobile-scroll">. Scroll right for more details.</span></p>
+          <div class = "titleRow monkey">
+            <p id = "model-name-title"><span id = "model-margin">Model</span><i class="fa"></i></p>
+            <p id = "total-staked-title">NMR Staked<i class="fa"></i></p>
+            <p id = "payout-title">NMR Payout<i class="fa"></i></p>
+            <p id = "daily-change-title">NMR Daily Change<i class="fa"></i></p>
+            <p id = "prev-rank-title">Prev Corr Rank<i class="fa"></i></p>
+            <p id = "rank-title">Rank<i class="fa"></i></p>
+            <p id = "mmc-rank-title">MMC Rank<i class="fa"></i></p>
+          </div>
+          <div class = "model-detail-row-section">
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="main-heading" id = "footer-heading">
+        <div id = "top-footer">
+          <a href = "https://numer.ai/tournament">Numerai</a>
+          <img src="/assets/num_mandala.PNG" alt="Dashboard Createor">
+          <a href = "https://www.coinbase.com/price/numeraire">NMR</a>
+        </div>
+        <div>
+          <p>&copy; Copyright 2020, James Gerstenberger</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src= '/js/app.js'></script>
+    <script src= '/js/darkmode.js'></script>
+  </body>
+</html>
