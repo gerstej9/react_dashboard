@@ -1,11 +1,11 @@
 export default function Usage (){
   return(
     <div>
-      <section class = "about-us">
+      <section>
         <h2>Overview</h2>
         <p>This application allows for users to create collections of models so that they can compare performance of individual model and analyze collection performance as a whole. Below is a walk through of how to effectively use this site and the features this site offers. </p>
       </section>
-      <section class = "about-us">
+      <section>
         <h2>
           Instructions
         </h2>
@@ -16,7 +16,7 @@ export default function Usage (){
         <h5>Adding and Deleting Models from a Collection</h5>
         <p>To add models to a collection, input a single model name into the text field at the bottom of the "Models" section and click on the "+ Add Model" button. Upon doing so you will see a new tile populate with the model name. To delete a model simply click on the "x" within the model tile or to delete all models in a collection use the "Clear All" button in the top right corner of the "Models" section. NOTE: After you have finished adding or deleting models, the "Save Collection" button in the top right corner must be clicked for changes to be saved.</p>
       </section>
-      <section class = "about-us">
+      <section>
         <h2>
           Features
         </h2>
