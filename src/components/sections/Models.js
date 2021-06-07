@@ -1,10 +1,17 @@
-function Models(){
+import { connect } from "react-redux";
+
+function Models(props){
   return(
     <section>
       <div class = "section-heading"> 
         <h2>Models</h2>
       </div>
       <ul id = "model-list" class = "collection-list">
+        {props.leaderboard.topTen.map((user, i) => {
+          return(
+          <li key={i}>{user.username}</li>
+          )
+        })}
       </ul>
       <div class = "section-footer">
         <input id = "model-to-add" class = "username-input" type = "text" name = "model"></input>
@@ -16,4 +23,10 @@ function Models(){
   )
 }
 
-export default Models
+const mapStateToProps = state => {
+  return {
+    leaderboard: state.leaderboard,
+  }
+}
+
+export default connect( mapStateToProps)(Models);

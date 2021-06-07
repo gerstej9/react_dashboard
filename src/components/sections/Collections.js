@@ -11,6 +11,7 @@ function Collections(){
         </div>
       </div>
       <ul class = "existing-collections collection-list">
+        <li>Top Ten</li>
       </ul>
     </section>
   )
