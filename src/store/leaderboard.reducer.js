@@ -3,6 +3,7 @@ import leaderboardQuery from '../api/leaderboard-query.js';
 
 let initialState = {
   leaderboard: [],
+  topTen: [],
 }
 
 export default function leaderboardReducer( state = initialState, action ){
@@ -13,6 +14,7 @@ export default function leaderboardReducer( state = initialState, action ){
     case "GET_LEADERBOARD":
       return {
         leaderboard: payload.v2Leaderboard,
+        topTen: payload.v2Leaderboard.splice(0,9),
       };
       default:
         return state;
