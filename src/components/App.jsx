@@ -1,11 +1,14 @@
 import { Provider } from 'react-redux';
 import store from '../store/index.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import About from './pages/About.js';
-import Usage from './pages/Usage.js';
-import Home from './pages/Home.js';
-import Header from './layout/Header.js';
-import Footer from './layout/Footer.js';
+import About from './pages/About.jsx';
+import Usage from './pages/Usage.jsx';
+import Home from './pages/Home.jsx';
+import Header from './layout/Header.jsx';
+import Footer from './layout/Footer.jsx';
+import '../styles/base.css'
+import '../styles/lightlayout.css'
+import '../styles/darklayout.css'
 
 function App() {
   return (

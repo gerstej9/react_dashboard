@@ -1,3 +1,5 @@
+import '../../styles/modules.css'
+
 function Collections(){
   return(
     <section>

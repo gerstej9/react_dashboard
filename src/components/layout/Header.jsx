@@ -1,5 +1,6 @@
 import Logo from '../logo';
 
+
 const Header = () => (
   <header>
     <div className="heading-rule heading-purple" />

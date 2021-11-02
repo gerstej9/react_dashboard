@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import '../../styles/modules.css'
 
 function Models(props){
   return(

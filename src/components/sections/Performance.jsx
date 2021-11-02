@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from "react-redux";
 import { getUserProfile } from '../../store/user-profile.reducer.js';
+import '../../styles/modules.css'
 
 
 function Performance(props){

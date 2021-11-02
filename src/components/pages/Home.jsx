@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { connect } from "react-redux";
 import { getNmrPrice } from '../../store/nmr.reducer.js';
 import { getLeaderboard } from '../../store/leaderboard.reducer.js';
-import Collections from '../sections/Collections.js'
-import Models from '../sections/Models.js'
-import Performance from '../sections/Performance.js'
+import Collections from '../sections/Collections.jsx'
+import Models from '../sections/Models.jsx'
+import Performance from '../sections/Performance.jsx'
 
 function HomePage(props){
   
